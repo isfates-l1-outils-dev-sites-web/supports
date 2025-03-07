@@ -42,7 +42,7 @@ Cela permet de s'assurer que votre **CSS est aussi petit que possible**, et c'es
 
 <Breadcrumbs />
 
-Tailwindcss est communément utilisé dans l'écosystème **nodejs**, et s'installe via son package manager **NPM**:
+Tailwindcss est communément utilisé dans l'écosystème **Nodejs**, et s'installe via son package manager **NPM**:
 
 ```bash
 npm install tailwindcss @tailwindcss/cli
@@ -214,3 +214,151 @@ Pour appliquer un utilitaire uniquement sur **une plage de breakpoints spécifiq
   ...
 </div>
 ```
+
+---
+
+<Breadcrumbs />
+
+### Ajout de styles personnalisés
+<Hr />
+
+Une des plus grandes limitations lorsque l'on travaille avec un framework est de comprendre ce que l'on est censé faire lorsque que le framework ne le gère pas.
+
+<v-click>
+
+> *"No matter what you’re building you never feel like you’re fighting the framework."*
+>
+> &mdash; <cite>https://tailwindcss.com/docs/adding-custom-styles</cite>
+</v-click>
+
+<v-click>
+
+TailwindCSS analysant votre `html`, il est possible d'utiliser des valeurs arbitraires:
+
+```html
+<div class="top-[117px] lg:top-[344px]">
+  <div class="grid grid-cols-[1fr_500px_2fr]">
+    <!-- ... -->
+  </div>
+  <div class="bg-[url('/what_a_rush.png')]">
+    <!-- ... -->
+  </div>
+</div>
+```
+</v-click>
+
+---
+
+<Breadcrumbs />
+
+### Dark mode
+<Hr />
+
+Tailwind inclut un variant `dark` qui permet de styliser votre site différemment lorsque le mode sombre est activé.
+
+<div class="flex justify-center h-2/5 my-5">
+  <img src="/images/tailwind-dark-mode.png" alt="Exemple de Dark mode"/>
+</div>
+
+<v-click>
+
+```html
+<div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white ...">
+  <!-- ... -->
+</div>
+```
+</v-click>
+
+---
+
+<Breadcrumbs />
+
+Par défaut, cette fonction utilise la fonctionnalité de média CSS native `prefers-color-scheme`:
+
+```css
+:root {
+  --text-color: black;
+}
+
+h1 {
+  color: var(--text-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+  }
+}
+```
+
+---
+
+<Breadcrumbs />
+
+Il existe 2 solutions pour tester le dark mode:
+<v-click>
+
+1. Utiliser le mode dark dans votre inspecteur: `⋮` > More Tools > Rendering
+
+<div class="flex justify-center h-3/5">
+  <img src="/images/enable-dark-chrome.png" alt="Interface de l'inspecteur de Chrome" class="!border-0"/>
+</div>
+</v-click>
+
+<v-click>
+
+2. Utiliser la classe `dark`: `<body class="dark">...</body>`. 
+</v-click>
+
+---
+
+<Breadcrumbs />
+
+### Exercice
+<Hr />
+
+**À vous de jouer:** Réalisez l'interface suivante en utilisant uniquement les classes de TailwindCSS. Ouvrez pour cela l'exercice `tailwind-404-page`:
+
+<div class="flex justify-center gap-5">
+  <img src="/images/tailwind-exercice-small.png" alt="Site web de Bootstrap" class="h-50"/>
+  <img src="/images/tailwind-exercice-big.png" alt="Site web de Bootstrap" class="h-50"/>
+</div>
+
+<!--
+```html
+<body class="dark dark:bg-gray-800 h-screen flex justify-center items-center">
+
+  <div class="text-left sm:text-center">
+    <p class="text-3xl sm:text-xl font-semibold text-indigo-600 dark:text-indigo-300">404</p>
+    <h1 class="mt-4 text-5xl sm:text-7xl font-semibold text-gray-900 dark:text-white ">Page not found</h1>
+    <p class="mt-6 text-lg font-medium text-pretty text-gray-500 dark:text-gray-300">
+      Sorry, we couldn’t find the page you’re looking for.
+    </p>
+    <a href="#" class="inline-block rounded-md mt-5 p-2 text-sm text-white bg-indigo-600 hover:bg-indigo-500">
+      Go back home
+    </a>
+  </div>
+
+  <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+  </style>
+</body>
+```
+-->
+
+---
+
+<Breadcrumbs />
+
+**Instructions:**
+
+<v-clicks depth="2">
+
+* Basez-vous sur le template d'exercice **tailwind-404-page**
+* L'interface devra être lisible en dark mode
+* La colour primaire à utiliser se nomme `indigo-600`
+* Le contenu de la page sera centré horizontalement et verticalement
+* Le texte sera aligné sur la gauche. Passé le breakpoint `sm`, il devra être centré.
+* La taille du texte `404` sera réduite passé le breakpoint `sm`
+* Utilisez la documentation https://tailwindcss.com/docs et sa **barre de recherche**
+</v-clicks>

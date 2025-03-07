@@ -529,8 +529,6 @@ Pour des besoins plus spécifique, Bootstrap propose de nombreuse classes utilit
 ### Exercice
 <Hr />
 
-
-
 **À vous de jouer:** Réalisez l'interface suivante en utilisant uniquement les composants, le système de grille est les utilities de Bootstrap:
 
 <div class="flex justify-center h-4/6 -mt-2">
@@ -671,9 +669,52 @@ disabled: true
 <Hr />
 
 
+---
+
+<Breadcrumbs />
+
+### Utilisation dans l'environnement Nodejs
+<Hr />
+
+<v-clicks>
+
+Node.js est un environnement d'exécution JavaScript gratuit, open-source et multiplateforme qui permet d'**exécuter du code JavaScript en dehors d'un navigateur web**.
+
+Cela permet de créer des serveurs, des applications web, des outils de ligne de commande et des scripts.
+
+<div class="flex flex-col justify-center items-center -mt-3 text-sm">
+  <img src="/images/bundler-schema.png" alt="Schéma du fonctionnement d'un bundler Javascript: https://webpack.js.org/" class="w-130"/>
+
+  Illustration du fonctionnement d'un bundler JavaScript.
+</div>
+
+</v-clicks>
 
 ---
-disabled: true
+
+<Breadcrumbs />
+
+<div class="flex justify-center h-1/10 mt-10">
+  <img src="/images/npm-logo.png" alt="Site web de Bootstrap" class="!border-none"/>
+</div>
+
+Le registre gratuit **npm** (**N**ode **P**ackage **M**anager) est devenu le centre du partage de code JavaScript et, avec plus de **deux millions de packages**, le plus grand registre de logiciels au monde.
+
+<v-click>
+
+```bash
+npm install bootstrap
+npm install -D sass
+```
+</v-click>
+
+<br />
+
+<v-click>
+
+**À vous de jouer:** Dans le repo [<mdi-github /> isfates-l1-outils-dev-sites-web/exercises](https://github.com/isfates-l1-outils-dev-sites-web/exercises), ouvrez dans votre IDE le template **bootstrap-vite** et suivez les instructions du fichier `README.md`.
+</v-click>
+
 ---
 
 <Breadcrumbs />
@@ -681,5 +722,74 @@ disabled: true
 ### Gestion du theme
 <Hr />
 
-* Todo??
-* Changer les values des breakpoints?
+En faisant un import de Bootstrap via `SCSS`, il nous est facilement possible de s'approprier le theme:
+
+```scss
+// style.scss
+$primary: green;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@import "bootstrap/scss/bootstrap";
+```
+
+---
+
+<Breadcrumbs />
+
+Vous pouvez consulter toutes les variables Bootstrap sous dans le fichier `SCSS`:
+
+```bash
+node_modules/bootstrap/scss/_variables.scss
+```
+<br />
+
+<v-click>
+
+**À vous de jouer:** Modifiez le theme de Bootstrap de sorte à:
+
+* augmenter toutes les espacements (`spacer`) de 2 fois la taille originale
+* définir tous les `border-radius` à `0`
+* augmenter toutes les tailles de police (`font-size`) de 1.5 fois la taille originale
+</v-click>
+
+<!--
+```scss
+$spacer: 2rem;
+$border-radius: 0rem;
+$font-size-base: 1.5rem;
+```
+-->
+
+---
+
+<Breadcrumbs />
+
+**Correction:**
+
+```scss {monaco}
+// styles.scss
+
+
+
+@import "bootstrap/scss/bootstrap";
+
+
+
+//# 
+```
+
+<!--
+```scss
+$spacer: 2rem;
+$border-radius: 0rem;
+$font-size-base: 1.5rem;
+```
+-->

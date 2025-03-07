@@ -40,19 +40,9 @@ src: ./slides/responsive-design.md
 src: ./slides/frameworks-css.md
 ---
 
-
 ---
-disabled: true
+src: ./slides/conclusion.md
 ---
-
-Sujets à aborder:
-
-<!--
-* Notion de theme et de design tokens -> https://atlassian.design/tokens/design-tokens
-* Small pick into design system?
-* css nesting -> https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_nesting/Using_CSS_nesting
-* css units rappel?
--->
 
 ---
 src: ./slides/ressources.md

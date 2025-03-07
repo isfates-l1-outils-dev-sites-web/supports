@@ -84,7 +84,7 @@ Très rapidement, la communauté CSS a développé différentes méthodologies p
 ### Méthodologie BEM
 <Hr />
 
-BEM vise à normaliser le nom des class CSS en les classant par **B**lock, **E**lement et **M**odifier.
+BEM vise à normaliser le nom des classes CSS en les classant par **B**lock, **E**lement et **M**odifier.
 
 <div class="text-sm">
 <v-clicks>
