@@ -24,7 +24,7 @@ hideInToc: true
     <img src="/images/my-logo.png" class="w-15 !rounded-full" alt="Logo de johannchopin"/>
     <div>
       <p class="!m-0 font-bold">Johann Chopin</p>
-      <p class="!m-0 text-sm">Frontend Developer</p>
+      <p class="!m-0 text-sm">Frontend Teach Lead</p>
     </div>
   </div>
 
@@ -46,7 +46,7 @@ hideInToc: true
 <hr/>
 
 <img src="/images/buyco.png" class="w-1/5 !border-0 mt-5" alt="Logo de Buyco"/>
-<p class="!m-0 text-sm">Actuellement depuis 2 ans chez Buyco</p>
+<p class="!m-0 text-sm">Actuellement depuis 4 ans chez Buyco</p>
 
 <div class="flex gap-10">
   <img src="/images/dryad.png" class="w-1/5 !border-0 mt-5" alt="Logo de Buyco"/>
@@ -61,6 +61,7 @@ hideInToc: true
   <mdi-react />
   <img src="/images/svelte.svg" class="!border-0 w-10 h-10" alt="Logo de svelte"/>
   <mdi-sass />
+  <mdi-tailwind />
   <mdi-docker />
 </p>
 
@@ -109,8 +110,9 @@ hideInToc: true
 
 Répartitions:
 
-* Vendredi après-midi: 28 février
-* 2 samedis matin: 1er et 8 mars
+* Lundi 27 avril après-midi
+* Mercredi 29 avril après-midi
+* Lundi 4 mai après-midi
 
 <v-click>
 

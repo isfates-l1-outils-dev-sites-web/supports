@@ -6,7 +6,7 @@
 
 Chaque présentations sont situées dans le dossier [slides](./slides/) et sont un projet [slidev](https://sli.dev/).
 
-Pour lancer une présentation en local (par exemple `git`), utilisez la commande `npx slidev ./slides/cours/slides.md`.
+Pour lancer une présentation en local (par exemple `cours`), utilisez la commande `yarn slidev ./slides/cours/slides.md`.
 
 ## Build
 
