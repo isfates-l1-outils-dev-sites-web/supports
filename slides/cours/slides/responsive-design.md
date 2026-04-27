@@ -37,7 +37,7 @@ CSS3 a énormement évolué depuis et mets à disposition une multitude de fonct
 
 <v-clicks>
 
-* Les Media Queries
+* Les Media/Container Queries
 * Le modèle de boîte CSS (flexbox)
 * CSS grid
 </v-clicks>
@@ -118,7 +118,7 @@ Les media queries nous permettent d'effectuer une série de tests (largeur de l'
   * Le contenu doit être centré en respectant une marge de 10% de la largeur de l'écran.
   * Les blocks `nav`, `article` et `aside` doivent être alignés horizontalement.
 * **screen width ⩽ 60rem**:
-  * Lec contenu ne doit prendre toute la largeur possible.
+  * Le contenu doit prendre toute la largeur possible.
   * Le blocks `aside` disparait de l'écran.
   * Les blocks `nav` et `article` sont alignés verticalement et prennent toute la largeur disponible.
 </v-clicks>
@@ -164,8 +164,81 @@ body {
 
 <Breadcrumbs />
 
+## Container Queries
+<Hr />
 
-Les media queries peuvent être utiles pour réaliser un layout responsive, mais elles ne sont pas obligatoires. Ainsi, lorsqu'il s'agit d'aligner un contenu de manière plus complexe, des outils plus spécifiques sont nécessaires.
+
+Les container queries nous permettent d'appliquer du CSS de manière sélective aux descendants d'un `container` en fonction de sa taille ou de ses propriétés CSS.
+
+<v-clicks>
+
+<div class="flex justify-center h-3/6">
+  <img src="/images/container-query-presentation.png" alt="Presentation des container query: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries"/>
+</div>
+
+<div class="mt-5 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative text-xs" role="alert">
+
+<mdi-bulb /> Les container queries sont souvent considérées comme une approche moderne aux traditionnelles media queries.
+</div>
+</v-clicks>
+
+---
+
+<Breadcrumbs />
+
+La syntaxe utilise principalement la règle CSS `@container` ainsi que les propriétés `container-type` et `container-name`:
+
+<div class="grid grid-cols-2 gap-5">
+<div>
+  <p class="text-sm">Container query basée sur un container nommé</p>
+
+```css
+.parent {
+  container-type: inline-size;
+  container-name: hero-banner;
+}
+
+/* Lorsque la longueur du conteneur hero-banner 
+dépasse 60 caractères */
+@container hero-banner (width > 60ch) {
+  .child {
+    background-color: green;
+  }
+}
+```
+</div>
+<div>
+  <p class="text-sm">Container query basée sur le container le plus proche</p>
+
+```css
+.parent {
+  container-type: inline-size;
+}
+
+/* Lorsque la longueur du conteneur dépasse 60 caractères */
+@container (width > 60ch) {
+  .child {
+    background-color: green;
+  }
+}
+```
+</div>
+</div>
+
+<v-click>
+<Link to="https://css-tricks.com/css-container-queries/" target="_blank" class="inline-block !mt-5 text-large">
+
+<mdi-open-in-new /> CSS Container Queries guide by CSS-TRICKS
+</Link>
+</v-click>
+
+
+---
+
+<Breadcrumbs />
+
+
+Les media/container queries peuvent être utiles pour réaliser un layout responsive, mais elles ne sont pas obligatoires. Ainsi, lorsqu'il s'agit d'aligner un contenu de manière plus complexe, des outils plus spécifiques sont nécessaires.
 
 <div class="flex justify-center h-2/5">
   <img src="/images/complex-layout.png" alt="Layout complexe: https://pingback.com/gabcodes/css-flexbox-como-posicionar-elementos-na-tela"/>
@@ -390,7 +463,7 @@ Comme des tableaux, les grilles CSS permettent au développeur d'**aligner les �
 <v-click>
 <div class="mt-7 bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative text-xs" role="alert">
 
-<mdi-bulb /> Pour l'espacement entre les boites, regardez voir la propriété [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap). [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) et [`grid-area`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area) vont vous aider pour définir les emplacements du contenu.
+<mdi-bulb /> Pour l'espacement entre les boites, les propriété [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap). [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas) et [`grid-area`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-area) vont vous aider pour définir les emplacements du contenu.
 </div>
 </v-click>
 

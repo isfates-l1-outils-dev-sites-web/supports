@@ -744,7 +744,7 @@ $grid-breakpoints: (
 
 <Breadcrumbs />
 
-Vous pouvez consulter toutes les variables Bootstrap sous dans le fichier `SCSS`:
+Vous pouvez consulter toutes les variables Bootstrap dans le fichier `SCSS`:
 
 ```bash
 node_modules/bootstrap/scss/_variables.scss

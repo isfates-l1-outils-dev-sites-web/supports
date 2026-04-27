@@ -8,12 +8,12 @@ RUN yarn playwright install-deps
 FROM build-base AS build-presentation
 ENV SLIDE_NAME="presentation"
 COPY ./slides/$SLIDE_NAME .
-RUN yarn slidev build ./slides.md --base /slides/$SLIDE_NAME/ && mkdir -p ./build/slides/$SLIDE_NAME && mv dist/* ./build/slides/$SLIDE_NAME
+RUN yarn cross-env NODE_OPTIONS=--max-old-space-size=8192 yarn slidev build ./slides.md --base /slides/$SLIDE_NAME/ && mkdir -p ./build/slides/$SLIDE_NAME && mv dist/* ./build/slides/$SLIDE_NAME
 
 FROM build-base AS build-cours
 ENV SLIDE_NAME="cours"
 COPY ./slides/$SLIDE_NAME .
-RUN yarn slidev build ./slides.md --base /slides/$SLIDE_NAME/ && mkdir -p ./build/slides/$SLIDE_NAME && mv dist/* ./build/slides/$SLIDE_NAME
+RUN yarn cross-env NODE_OPTIONS=--max-old-space-size=8192 yarn slidev build ./slides.md --base /slides/$SLIDE_NAME/ && mkdir -p ./build/slides/$SLIDE_NAME && mv dist/* ./build/slides/$SLIDE_NAME
 
 
 FROM nginx:1.27.0-alpine
